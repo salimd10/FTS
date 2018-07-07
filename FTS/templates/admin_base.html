@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{%block title%}{%endblock%}</title>
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+    <!--
+    Visual Admin Template
+    http://www.templatemo.com/preview/templatemo_455_visual_admin
+    -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="/static/FTS3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/FTS3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/FTS3/css/templatemo-style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+      <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+          <div class="square"></div>
+          <h1>{%block username%}{%endblock%}</h1>
+        </header>
+        <div class="profile-photo-container">
+          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
+          <div class="profile-photo-overlay"></div>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+          <div class="input-group">
+              <button type="submit" class="fa fa-search"></button>
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          </div>
+        </form>
+        <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+          <ul>
+            <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
+            <li><a href="/logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+            <li><a href=#><i class="fa fa-eject fa-fw"></i>Add staff</a></li>
+            <li><a href=#><i class="fa fa-eject fa-fw"></i>Add file</a></li>
+            <li><a href=#><i class="fa fa-eject fa-fw"></i>Remove staff</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Main content -->
+      <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+          <div class="row">
+            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+              <ul class="text-uppercase">
+                <li><a href="" class="active">Dashboard</a></li>
+
+                <li><a href="/logout">Sign out</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="templatemo-content-container">
+          <div class="templatemo-flex-row flex-content-row">
+            <div class="templatemo-content-widget white-bg col-2">
+              <i class="fa fa-times"></i>
+              <!--<div class="square"></div>-->
+              <button type="button" class="btn btn-danger btn-lg btn-block" disabled>Pending Files &emsp;<span class="badge badge-light">{%block pnumber%}{%endblock%}</span></button><hr>
+              {%block pblock%}{%endblock%}
+            </div>
+            <div class="templatemo-content-widget white-bg col-2">
+              <i class="fa fa-times"></i>
+              <!--<div class="square"></div>-->
+              <button type="button" class="btn btn-success btn-lg btn-block" disabled>Accepted Files &emsp;<span class="badge badge-light">{%block anumber%}{%endblock%}</span></button><hr>
+              {%block ablock%}{%endblock%}
+            </div>
+
+          </div>
+           <!-- Second row ends -->
+          <footer class="text-right">
+            <p>Copyright &copy; 2018 NeoAltus
+            | Designed by <a href="" target="_parent">NeoAltus</a></p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/static/FTS3/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+    <script src="/static/FTS3/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
+    <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
+
+    <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+
+  </body>
+</html>

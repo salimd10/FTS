@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{%block welcome%}
+  <h1>Welcome to HAJJ COMMISSION</h1>
+{%endblock%}
+{%block login%}
+<div class="col-lg-5 col-md-8">
+
+            <div class="form">
+
+              <div class="alert alert-warning"> {{errors}}</div>
+
+              <form action='' method="POST" role="form" class="contactform">
+                  {%csrf_token%}
+                  <div class="form-group">
+                    {{login.username}}
+                  <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    {{login.password}}
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><input type="submit" value="login"></div>
+              </form>
+            </div>
+          </div>
+{%endblock%}

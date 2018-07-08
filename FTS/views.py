@@ -118,11 +118,13 @@ def admin_staff(request, staff_id):
         #outgoing_files = []
         user_list = []
         file_list = []
+        n=[]
         users = Staff.objects.all()
         files = File.objects.all()
         user = Staff.objects.get(id=staff_id)
         infiles = FileTracker.objects.filter(receiver=str(user.id), status='pending')
-        sentfiles = FileTracker.objects.filter(sender=str(user.id), status='pending')
+        #sentfiles = FileTracker.objects.filter(sender=str(user.id), status='pending')
+        tracking_files = FileTracker.objects.all()
         for staff in users:
             if staff.id == int(staff_id):
                 pass
@@ -130,9 +132,15 @@ def admin_staff(request, staff_id):
                 name = staff.first_name + ' ' + staff.surname
                 user_list.append([staff.id, name])
         for file in files:
-            file_list.append([file.id, file.name])
+            file_list.append([file.file_id, file.name])
 
-        for data in sentfiles:
+        for tfiles in tracking_files:
+            if tfiles.sender == staff_id and tfiles.status=='received':
+                pass
+            else:
+                n.append(tfiles)
+
+        for data in n:
             for list in file_list:
                 if data.name == list[1]:
                     file_list.remove(list)
@@ -157,21 +165,22 @@ def admin_staff(request, staff_id):
 
 
 def accept(request, staff_id):
-    file_id = request.GET['staff_id']
-    staff = Staff.objects.get(id=staff_id)
-    if staff.admin_status:
-        template="admin_accept.html"
-    else:
-        template = "accept.html"
-    now = datetime.datetime.now()
-    staff = Staff.objects.get(id=staff_id)
-    file = FileTracker.objects.get(receiver=str(staff_id),file_id=file_id)
-    FileTracker.objects.filter(receiver=str(staff_id)).update(receiver='', status='received', sender=staff_id)
-    log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender='', receiver=staff_id, status='accepted')
-    log.save()
-    context = {'mssg':"File has been accepted, kindly work on it within the next 24hrs", 'staff_id': staff_id, 'status':staff.admin_status}
+    if request.method == "GET":
+        file_id = request.GET.get('file_id',False)
+        staff = Staff.objects.get(id=staff_id)
+        if staff.admin_status:
+            template = "admin_accept.html"
+        else:
+            template = "accept.html"
+        now = datetime.datetime.now()
+        #staff = Staff.objects.get(id=staff_id)
+        file = FileTracker.objects.get(receiver=str(staff_id),file_id=file_id)
+        FileTracker.objects.filter(receiver=str(staff_id)).update(receiver='', status='received', sender=staff_id)
+        log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender='', receiver=staff_id, status='accepted')
+        log.save()
+        context = {'mssg':"File has been accepted, kindly work on it within the next 24hrs", 'staff_id': staff_id}
 
-    return render(request, template, context)
+        return render(request, template, context)
 
 
 def send(request, staff_id):
@@ -182,19 +191,17 @@ def send(request, staff_id):
         template = "accept.html"
     now=datetime.datetime.now()
     if request.method == "POST":
+        print(request.POST['file_id'])
         receiver_id = request.POST['receiver']
-        staff_file_id = request.POST['send']
-        print(staff_file_id)
+        file_id = request.POST['file_id']
         if staff.admin_status:
-            file_id = request.POST['files']
-            file = File.objects.get(id=int(file_id))
-            print(file_id)
 
+            file = File.objects.get(file_id=file_id)
             try:
                 FileTracker.objects.get(sender=str(staff_id), status='received',file_id=file_id)
                 tracker = FileTracker.objects.create(file_id=file.file_id, name=file.name, sender=staff_id,
                                                      receiver=receiver_id, status='pending')
-                FileTracker.objects.get(sender=str(staff_id), status='received').delete()
+                FileTracker.objects.get(sender=str(staff_id), status='received', file_id=file_id).delete()
             except ObjectDoesNotExist:
                 tracker = FileTracker.objects.create(file_id=file.file_id, name=file.name, sender=staff_id,
                                                      receiver=receiver_id, status='pending')
@@ -204,9 +211,9 @@ def send(request, staff_id):
             tracker.save()
             log.save()
         else:
-            file = FileTracker.objects.get(sender=str(staff_id),file_id=staff_file_id)
+            file = FileTracker.objects.get(sender=str(staff_id),file_id=file_id)
             tracker = FileTracker.objects.create(file_id=file.file_id,name=file.name, sender=staff_id, receiver=receiver_id, status='pending')
-            FileTracker.objects.get(sender=str(staff_id),status='received').delete()
+            FileTracker.objects.get(sender=str(staff_id),status='received',file_id=file_id).delete()
             log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender=staff_id, receiver=receiver_id, status='sent')
             tracker.save()
             log.save()

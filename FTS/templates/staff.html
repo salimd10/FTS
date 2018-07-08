@@ -21,7 +21,9 @@
                     {%for data in file%}
 				        <td>{{data}}</td>
 				    {%endfor%}
-                    <td><a href="/accept/{{staff_id}}/?file_id={{file.1}}" class="templatemo-edit-btn">Accept</a>{{file.1}}</td>
+                    <td>
+                        <a href="/accept/{{staff_id}}/?file_id={{file.1}}" class="templatemo-edit-btn">Accept</a>{{file.1}}
+                    </td>
                   </tr>
                 {%endfor%}
                 </tbody>
@@ -30,6 +32,10 @@
             </div>
  </div>
 {%endblock%}
+
+
+<!--sending portion-->
+
 
 {%block ablock%}
 <div>{{msg}}</div>
@@ -47,15 +53,18 @@
                   </tr>
                 </thead>
                 <tbody>
+
                 {%for file in outgoing_files%}
                   <tr>
-                    <td></td>
+                   <form method="post" action="/send/{{staff_id}}">
+                       {%csrf_token%}
+                    <td><input type="hidden" value="{{file.1}}" name="file_id"/>{{file.1}}</td>
                     {%for data in file%}
 				        <td>{{data}}</td>
 
 				    {%endfor%}
-                    <form method="post" action="/send/{{staff_id}}">
-                      {%csrf_token%}
+
+
                       <td>
                         <select name="receiver" id="office"  class="form-control">
                             {%for user in user_list%}
@@ -71,7 +80,7 @@
 
                           <input type="submit" value="send" class="templatemo-edit-btn"/>
                       </td>
-                    </form>
+                   </form>
                   </tr>
 
                 {%endfor%}

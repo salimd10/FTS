@@ -22,7 +22,7 @@
                     {%for data in file%}
 				        <td>{{data}}</td>
 				    {%endfor%}
-                    <td><a href="/admin_accept/{{staff_id}}" class="templatemo-edit-btn">accept</a></td>
+                    <td><a href="/accept/{{staff_id}}/?file_id={{file.1}}" class="templatemo-edit-btn">accept</a></td>
                   </tr>
 
                 {%endfor%}
@@ -33,6 +33,11 @@
             </div>
  </div>
 {%endblock%}
+
+
+
+
+<!--sending portion-->
 
 {%block ablock%}
 <div>{{msg}}</div>
@@ -58,7 +63,7 @@
 
                           <td>
 
-                            <select name="files"   class="form-control">
+                            <select name="file_id"   class="form-control">
                                 {%for file in file_list%}
                                  <option value={{file.0}}>{{file.1}}</option>
                                 {%endfor%}

@@ -5,121 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4bf548-e64c-48cc-9efd-3ec1a65d4629" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/HELP-US-OUT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/about-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/about-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/about-img-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/about-img-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/about-img-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/banner-bg-about-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/banner-bg-about.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/banner-bg-home.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-1-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-2-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-3-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-4-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-5-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-6-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-7-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-8-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/gallery-item-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/home-img-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/menu-bg-gallery.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/menu-bg-home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/page-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/images/slider-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/js/imagesloaded.3.1.8.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/js/jquery-1.11.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS2/js/jquery.masonry.3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS3/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS3/manage-users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/static/FTS3/staff_base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/accept.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/templates/add_staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/add_staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/templates/add_staff_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/add_staff_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/cuts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/invalid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/loggedin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/login1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/send.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/templates/admin_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/admin_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/templates/manage_logins.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/manage_logins.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/templates/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/white.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FTS/templates/staff_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/staff_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NHC_FTS.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NHC_FTS.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/HELP-US-OUT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/about-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/about-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/about-img-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/about-img-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/about-img-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/banner-bg-about-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/banner-bg-about.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/banner-bg-home.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-1-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-2-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-3-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-4-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-5-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-6-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-7-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-8-big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/gallery-item-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/home-img-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/menu-bg-gallery.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/menu-bg-home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/page-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/images/slider-img-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/js/imagesloaded.3.1.8.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/js/jquery-1.11.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/FTS2/js/jquery.masonry.3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NHC_FTS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NHC_FTS/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -130,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FTS/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+            <state relative-caret-position="454">
+              <caret line="260" column="31" lean-forward="true" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -142,11 +40,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FTS/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_staff_login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            <state relative-caret-position="594">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
               <folding>
                 <element signature="e#627#659#0" expanded="true" />
               </folding>
@@ -154,38 +73,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_accept.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/admin_accept.html">
+      <file leaf-file-name="admin_base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="539">
+              <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/admin.html">
+      <file leaf-file-name="manage_logins.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+            <state relative-caret-position="72">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_send.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/admin_send.html">
+      <file leaf-file-name="add_staff.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="accept.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/accept.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="54">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -199,11 +109,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staff.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/staff.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-446">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="378">
+              <caret line="21" column="82" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -226,29 +148,32 @@
         <option value="$PROJECT_DIR$/NHC_FTS/settings.py" />
         <option value="$PROJECT_DIR$/FTS/functions.py" />
         <option value="$PROJECT_DIR$/FTS/templates/base.html" />
-        <option value="$PROJECT_DIR$/FTS/forms.py" />
         <option value="$PROJECT_DIR$/FTS/templates/index.html" />
         <option value="$PROJECT_DIR$/FTS/templates/base1.html" />
         <option value="$PROJECT_DIR$/FTS/static/FTS3/index.html" />
         <option value="$PROJECT_DIR$/FTS/templates/cuts.html" />
         <option value="$PROJECT_DIR$/FTS/static/FTS3/manage-users.html" />
         <option value="$PROJECT_DIR$/FTS/admin.py" />
-        <option value="$PROJECT_DIR$/FTS/models.py" />
         <option value="$PROJECT_DIR$/FTS/send.html" />
-        <option value="$PROJECT_DIR$/FTS/templates/staff_base.html" />
-        <option value="$PROJECT_DIR$/FTS/templates/admin_base.html" />
         <option value="$PROJECT_DIR$/FTS/templates/admin_accept.html" />
         <option value="$PROJECT_DIR$/FTS/templates/admin_send.html" />
-        <option value="$PROJECT_DIR$/NHC_FTS/urls.py" />
         <option value="$PROJECT_DIR$/FTS/templates/accept.html" />
         <option value="$PROJECT_DIR$/FTS/templates/send.html" />
-        <option value="$PROJECT_DIR$/FTS/templates/admin.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/staff_base.html" />
         <option value="$PROJECT_DIR$/FTS/templates/staff.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/admin.html" />
+        <option value="$PROJECT_DIR$/FTS/forms.py" />
+        <option value="$PROJECT_DIR$/FTS/templates/add_staff.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/add_staff_login.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/admin_base.html" />
+        <option value="$PROJECT_DIR$/NHC_FTS/urls.py" />
+        <option value="$PROJECT_DIR$/FTS/templates/manage_logins.html" />
         <option value="$PROJECT_DIR$/FTS/views.py" />
+        <option value="$PROJECT_DIR$/FTS/models.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1378" />
     <option name="height" value="780" />
@@ -277,6 +202,12 @@
               <item name="NHC_FTS" type="462c0819:PsiDirectoryNode" />
               <item name="FTS" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NHC_FTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NHC_FTS" type="462c0819:PsiDirectoryNode" />
+              <item name="FTS" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,7 +253,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -433,25 +365,11 @@
     <entry file="file://$PROJECT_DIR$/FTS/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/static/FTS/lib/wow/wow.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/static/FTS/contactform/Readme.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -501,49 +419,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/staff_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="26" selection-end-line="102" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NHC_FTS/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="e#627#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/static/FTS3/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -568,13 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_send.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/admin_accept.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -582,17 +452,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_send.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/staff_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="80" column="94" selection-start-line="80" selection-start-column="94" selection-end-line="80" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/form.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+        <state relative-caret-position="18">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/accept.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="162">
+          <caret line="9" column="7" lean-forward="true" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -603,19 +504,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/staff.html">
+    <entry file="file://$PROJECT_DIR$/FTS/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-446">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="378">
+          <caret line="21" column="82" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+        <state relative-caret-position="454">
+          <caret line="260" column="31" lean-forward="true" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

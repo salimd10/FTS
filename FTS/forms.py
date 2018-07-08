@@ -1,17 +1,24 @@
 from django import forms
+from FTS.models import *
 
+class StaffRegForm(forms.ModelForm):
+    # first_name = forms.CharField()
+    # surname = forms.CharField()
+    # last_name = forms.CharField()
+    # staff_id = forms.CharField()
+    # password1 = forms.CharField(widget=forms.PasswordInput, min_length=8)
+    # password2 = forms.CharField(widget=forms.PasswordInput, min_length=8)
+    # admin_status = forms.ChoiceField(choices=(("True", "True"), ("False", "False")), required=True)
 
-class StaffRegForm(forms.Form):
-    first_name = forms.CharField()
-    surname = forms.CharField()
-    last_name = forms.CharField()
-    phone = forms.CharField(max_length=11)
-    email = forms.EmailField()
-    staff_id = forms.CharField()
-    password1 = forms.CharField(widget=forms.PasswordInput,min_length=6)
-    password2 = forms.CharField(widget=forms.PasswordInput)
-    admin_status = forms.ChoiceField(choices=(("True", "True"), ("False", "False")), required=True)
+    class Meta:
+        model = Staff
+        fields = '__all__'
 
+class LoginDetailsForm(forms.ModelForm):
+
+    class Meta:
+        model = StaffLogin
+        fields = '__all__'
 
 class AddFileForm(forms.Form):
     file_id = forms.CharField(max_length=30)

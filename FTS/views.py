@@ -221,22 +221,58 @@ def send(request, staff_id):
 
         return render(request, template, context)
 
+            #####################
+            #admin functionality#
+            #                   #
+            #####################
 
-# def admin_send(request, staff_id):
-#     template = "send.html"
-#     now=datetime.datetime.now()
-#     if request.method == "POST":
-#         receiver_id = request.POST['receiver']
-#         file_id= request.POST['files']
-#         #staff = Staff.objects.get(id=staff_id)
-#         file = File.objects.get(id=int(file_id))
-#         FileTracker.objects.create(file_id=file.file_id,name=file.name, sender=staff_id, receiver=receiver_id, status='pending')
-#         FileTracker.objects.get(sender=str(staff_id), status='received').delete()
-#         log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender=staff_id, receiver=receiver_id, status='sent')
-#         log.save()
-#         context = {'mssg':"File has been sent, kindly follow up on it.", 'staff_id': staff_id}
-#
-#         return render(request, template, context)
+
+def add_staff(request):
+    template = "add_staff.html"
+    if request.method == "POST":
+        form = StaffRegForm(request.POST)
+        if form.is_valid():
+            staff_id = form.cleaned_data['staff_id']
+            first_name = form.cleaned_data['first_name']
+            surname = form.cleaned_data['surname']
+            last_name = form.cleaned_data['last_name']
+            office = form.cleaned_data['office']
+            admin_status = form.cleaned_data['admin_status']
+            staff = Staff(staff_id=staff_id,first_name=first_name,surname=surname,last_name=last_name,
+                          admin_status=admin_status,office=office)
+            staff.save()
+            return HttpResponseRedirect('/')
+        else:
+            error=form.errors
+            context = {'form':form,'error':error}
+            return render(request, template, context)
+    else:
+        form = StaffRegForm()
+        context={"form":form}
+        return render(request,template,context)
+def add_staff_login(request):
+    template = "add_staff_login.html"
+    if request.method == "POST":
+        form = LoginDetailsForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            staff = form.cleaned_data['staff']
+            staff_login = StaffLogin(username=username, password=password, staff=staff)
+            staff_login.save()
+            return HttpResponseRedirect('/')
+        else:
+            error = form.errors
+            context = {'form': form, 'error': error}
+            return render(request, template, context)
+    else:
+        form = LoginDetailsForm()
+        context = {"form": form}
+        return render(request, template, context)
+def manage_logins(request):
+    return render(request, "manage_logins.html", {})
+
+
 
 
 def logout(request):

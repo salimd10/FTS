@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4bf548-e64c-48cc-9efd-3ec1a65d4629" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/FTS/templates/add_file.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FTS/templates/rmv_staff_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FTS/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/models.py" afterDir="false" />
@@ -13,8 +16,6 @@
       <change beforePath="$PROJECT_DIR$/FTS/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/templates/admin_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/admin_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/templates/manage_logins.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/manage_logins.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTS/templates/staff_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/templates/staff_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FTS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FTS/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NHC_FTS.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NHC_FTS.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NHC_FTS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NHC_FTS/urls.py" afterDir="false" />
@@ -28,65 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/views.py">
+      <file leaf-file-name="manage-users.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/manage-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="260" column="31" lean-forward="true" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
+            <state relative-caret-position="410">
+              <caret line="58" column="14" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="58" selection-end-column="14" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FTS/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_staff_login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-              <folding>
-                <element signature="e#627#659#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage_logins.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -94,17 +44,44 @@
       <file leaf-file-name="add_staff.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="216">
+              <caret line="12" lean-forward="true" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="send.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FTS/templates/send.html">
+      <file leaf-file-name="add_staff_login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state>
+              <caret lean-forward="true" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rmv_staff_login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/rmv_staff_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_file.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/add_file.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage_logins.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -118,16 +95,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FTS/templates/form.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FTS/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="162">
+              <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preferences.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/preferences.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -161,19 +148,23 @@
         <option value="$PROJECT_DIR$/FTS/templates/send.html" />
         <option value="$PROJECT_DIR$/FTS/templates/staff_base.html" />
         <option value="$PROJECT_DIR$/FTS/templates/staff.html" />
+        <option value="$PROJECT_DIR$/NHC_FTS/urls.py" />
+        <option value="$PROJECT_DIR$/FTS/ajax.py" />
+        <option value="$PROJECT_DIR$/FTS/models.py" />
+        <option value="$PROJECT_DIR$/FTS/views.py" />
+        <option value="$PROJECT_DIR$/FTS/templates/admin_base.html" />
         <option value="$PROJECT_DIR$/FTS/templates/admin.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/search.html" />
         <option value="$PROJECT_DIR$/FTS/forms.py" />
         <option value="$PROJECT_DIR$/FTS/templates/add_staff.html" />
-        <option value="$PROJECT_DIR$/FTS/templates/add_staff_login.html" />
-        <option value="$PROJECT_DIR$/FTS/templates/admin_base.html" />
-        <option value="$PROJECT_DIR$/NHC_FTS/urls.py" />
+        <option value="$PROJECT_DIR$/FTS/templates/add_file.html" />
         <option value="$PROJECT_DIR$/FTS/templates/manage_logins.html" />
-        <option value="$PROJECT_DIR$/FTS/views.py" />
-        <option value="$PROJECT_DIR$/FTS/models.py" />
+        <option value="$PROJECT_DIR$/FTS/templates/add_staff_login.html" />
+        <option value="$PROJECT_DIR$/FTS/templates/rmv_staff_login.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="27" />
     <option name="width" value="1378" />
     <option name="height" value="780" />
@@ -196,12 +187,6 @@
               <item name="NHC_FTS" type="b2602c69:ProjectViewProjectNode" />
               <item name="NHC_FTS" type="462c0819:PsiDirectoryNode" />
               <item name="FTS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NHC_FTS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NHC_FTS" type="462c0819:PsiDirectoryNode" />
-              <item name="FTS" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NHC_FTS" type="b2602c69:ProjectViewProjectNode" />
@@ -250,13 +235,28 @@
       <option name="presentableId" value="Default" />
       <updated>1530569305211</updated>
     </task>
+    <task id="LOCAL-00001" summary="admin changes">
+      <created>1531062850512</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531062850513</updated>
+    </task>
+    <task id="LOCAL-00002" summary="admin changes">
+      <created>1531062890335</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531062890335</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14166667" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" />
@@ -280,6 +280,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="admin changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin changes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FTS/views.py">
@@ -452,20 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_send.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/staff_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="80" column="94" selection-start-line="80" selection-start-column="94" selection-end-line="80" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/staff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -473,20 +463,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/form.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -504,6 +484,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/ajax.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" lean-forward="true" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_send.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/staff_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="58" lean-forward="true" selection-start-line="35" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="e#200#206#0" expanded="true" />
+            <element signature="e#1673#1679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/data-visualization.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/preferences.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/FTS/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -511,71 +576,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/admin_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NHC_FTS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-          <folding>
-            <element signature="e#627#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/form.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/FTS/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="162">
+          <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/views.py">
+    <entry file="file://$PROJECT_DIR$/FTS/templates/add_file.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="260" column="31" lean-forward="true" selection-start-line="260" selection-start-column="31" selection-end-line="260" selection-end-column="31" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/templatemo_455_visual_admin/manage-users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="58" column="14" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="58" selection-end-column="14" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FTS/models.py">
+    <entry file="file://$PROJECT_DIR$/FTS/templates/manage_logins.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/add_staff_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FTS/templates/rmv_staff_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

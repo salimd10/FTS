@@ -61,12 +61,14 @@ class FilesLogs(models.Model):
     sender = models.CharField(max_length=30, default='', null=True,blank=True)
     receiver = models.CharField(max_length=30, default='', null=True,blank=True)
     status = models.CharField(max_length=30, default='', null=True,blank=True)
-    date = models.DateTimeField
+    #date = models.DateTimeField
 
     objects = models.Manager()
 
     def __str__(self):
         return self.name
+
+
 class Staff(models.Model):
     staff_id = models.CharField(unique=True, max_length=8)
     first_name = models.CharField(max_length=50)

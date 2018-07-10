@@ -33,16 +33,11 @@
           <h1>{%block username%}{%endblock%}</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
+          <!--<img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">-->
           <div class="profile-photo-overlay"></div>
         </div>
         <!-- Search box -->
-        <form class="templatemo-search-form" role="search">
-          <div class="input-group">
-              <button type="submit" class="fa fa-search"></button>
-              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-          </div>
-        </form>
+        {%block search%}{%endblock%}
         <div class="mobile-menu-icon">
             <i class="fa fa-bars"></i>
         </div>
@@ -51,7 +46,7 @@
             <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
             <li><a href="/logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
             <li><a href="/add_staff"><i class="fa fa-eject fa-fw"></i>Add staff</a></li>
-            <li><a href=#><i class="fa fa-eject fa-fw"></i>Add file</a></li>
+            <li><a href="/add_file"><i class="fa fa-eject fa-fw"></i>Add file</a></li>
             <li><a href=#><i class="fa fa-eject fa-fw"></i>Remove staff</a></li>
             <li><a href="/manage_logins"><i class="fa fa-eject fa-fw"></i>Manage Logins</a></li>
           </ul>
@@ -72,17 +67,15 @@
         </div>
         <div class="templatemo-content-container">
           <div class="templatemo-flex-row flex-content-row">
-            <div class="templatemo-content-widget white-bg col-2">
-              <i class="fa fa-times"></i>
+            <div class="templatemo-content-widget white-bg {%block col1%}{%endblock%}"><!--col-2">-->
+              <!--<i class="fa fa-times"></i>-->
               <!--<div class="square"></div>-->
-              <button type="button" class="btn btn-danger btn-lg btn-block" disabled>Pending Files &emsp;<span class="badge badge-light">{%block pnumber%}{%endblock%}</span></button><hr>
-              {%block pblock%}{%endblock%}
+                    {%block pblock%}{%endblock%}
             </div>
-            <div class="templatemo-content-widget white-bg col-2">
-              <i class="fa fa-times"></i>
+            <div class="templatemo-content-widget white-bg {%block col2%}{%endblock%}"><!--col-2">-->
+             <!-- <i class="fa fa-times"></i>-->
               <!--<div class="square"></div>-->
-              <button type="button" class="btn btn-success btn-lg btn-block" disabled>Accepted Files &emsp;<span class="badge badge-light">{%block anumber%}{%endblock%}</span></button><hr>
-              {%block ablock%}{%endblock%}
+               {%block ablock%}{%endblock%}
             </div>
 
           </div>

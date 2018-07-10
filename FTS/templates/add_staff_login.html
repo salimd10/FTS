@@ -1,14 +1,14 @@
-<html>
-<body>
+
+
+{%extends "admin_base.html"%}
+
+
+{%block pblock%}
+
 {{error}}
 <form action='' method="POST" role="form" class="contactform">
     {%csrf_token%}
 {{form}}
     <div class="text-center"><input type="submit" value="add"></div>
 </form>
-
-</body>
-
-
-
-</html>
+{%endblock%}

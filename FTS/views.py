@@ -11,27 +11,50 @@ import string
 # Create your views here.
 
 def search(request):
-    query = request.POST.get('search', '')
-    if query:
-        qset = (
-                 Q(name__icontains=query) |
-                 Q(file_id__icontains=query)
-                 #Q(office__icontains=query)
-                )
-        results= File.objects.filter(qset)
-        if len(results)==0:
-            message="No files with your search parameter. Please search again."
-            context={"message":message,"query":query}
+    template = "search.html"
+    search_form = SearchForm()
+    if request.method == "GET":
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['search']
+
+            qset = (
+                    Q(name__icontains=query) |
+                    Q(file_id__icontains=query)
+                    )
+            results = FilesLogs.objects.filter(qset)
+            for log in results:
+                if log.sender!= '':
+                    u=Staff.objects.get(id=int(log.sender))
+                    log.sender=u.first_name + ' '+ u.surname
+
+                else:
+                    pass
+
+                if log.receiver != '':
+                    u=Staff.objects.get(id=int(log.receiver))
+                    log.receiver =u.first_name + ' '+ u.surname
+
+                else:
+                    pass
+
+
+            if len(results)==0:
+                message="No files with your search parameter. Please search again."
+                context={"message":message,"query":query,"search_form": search_form}
+                return render(request, template, context)
+            else:
+                context = {"results": results, "query": query, "search_form": search_form}
+                return render(request, template, context)
         else:
-            context={"results":results,"query":query}
+            error = form.errors  #message ="please type in a search string"
+            context = {"error":error, 'form':form}
+            return render(request, template, context)
     else:
-        message ="please type in a search string"
+        form = SearchForm()
+        return render(request, template, {"search_form": form, 'form': form})
 
-        context={"message":message,"query":query}
 
-
-    template="search.html"
-    return render(request,template,context)
 
 
 def home(request):
@@ -113,6 +136,7 @@ def staff(request, staff_id):
 
 def admin_staff(request, staff_id):
     template = "admin.html"
+    form=SearchForm()
     if 'staff_id' in request.session and request.session['staff_id'] == int(staff_id):
         incoming_files = []
         #outgoing_files = []
@@ -154,10 +178,10 @@ def admin_staff(request, staff_id):
             #     outgoing_files.append([file.name, file.file_id])
             context = {"staff": [user.first_name, user.surname], "incoming_files": incoming_files,
 
-                       "user_list": user_list, "staff_id": staff_id, 'file_list': file_list}
+                       "user_list": user_list, "staff_id": staff_id, 'file_list': file_list, "form": form}
 
         else:
-            context = {"user_list": user_list, 'file_list': file_list,"staff_id": staff_id}
+            context = {"user_list": user_list, 'file_list': file_list,"staff_id": staff_id, "form": form}
         return render(request, template, context)
     else:
 
@@ -269,6 +293,47 @@ def add_staff_login(request):
         form = LoginDetailsForm()
         context = {"form": form}
         return render(request, template, context)
+
+def rmv_staff_login(request):
+    template = "rmv_staff_login.html"
+    if request.method == "POST":
+        form = RmvLoginForm(request.POST)
+        if form.is_valid():
+            user = form.cleaned_data['user']
+            for u in user:
+                StaffLogin.objects.get(staff=u.id).delete()
+
+            #staff_login = StaffLogin(username=username, password=password, staff=staff)
+            #staff_login.save()
+            return HttpResponseRedirect('/')
+        else:
+            error = form.errors
+            context = {'form': form, 'error': error}
+            return render(request, template, context)
+    else:
+        form = RmvLoginForm()
+        context = {"form": form}
+        return render(request, template, context)
+
+def add_file(request):
+    template = "add_file.html"
+    if request.method == 'POST':
+        form= AddFileForm(request.POST)
+        if form.is_valid():
+            file_id = form.cleaned_data['file_id']
+            file_name = form.cleaned_data['name']
+            file=File(file_id=file_id, name=file_name)
+            file.save()
+            return HttpResponseRedirect("/")
+        else:
+            error = form.errors
+            context={'errors':error}
+            return render(request,template,context)
+    else:
+        form=AddFileForm()
+        context={'form':form}
+        return render(request,template,context)
+
 def manage_logins(request):
     return render(request, "manage_logins.html", {})
 
@@ -283,3 +348,5 @@ def logout(request):
         except:
             pass
     return None
+
+

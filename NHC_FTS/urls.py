@@ -25,7 +25,9 @@ urlpatterns = [
     #usr auth urls
     path('', home),
     path('add_staff/', add_staff),
+    path('add_file/', add_file),
     path('add_staff_login/', add_staff_login),
+    path('rmv_staff_login/', rmv_staff_login),
     re_path(r'^staff/(\d{1,4})/$', staff),
     re_path(r'^admin_staff/(\d{1,4})/$', admin_staff),
     re_path(r'^accept/(\d{1,4})', accept),

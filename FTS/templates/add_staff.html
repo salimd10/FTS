@@ -1,12 +1,56 @@
 {%extends "admin_base.html"%}
 
-
-{%block pblock%}
-
-{{error}}
-<form action='' method="POST" role="form" class="contactform">
-    {%csrf_token%}
-{{form}}
-    <div class="text-center"><input type="submit" value="add"></div>
-</form>
+{%block title%}admin{%endblock%}
+{%block s2css%}{{staff_reg_form.media.css}}{%endblock%}
+{%block s2cjs%}{{staff_reg_form.media.js}}{%endblock%}
+{%block navbar%}
+{%include "nav.html"%}
 {%endblock%}
+
+{%block edits%}
+
+<form action='' class="templatemo-login-form" method="post" >
+    {%csrf_token%}
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="staff_id">staff id</label>
+                    {{staff_reg_form.staff_id}}
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="first_name">first name</label>
+                    {{staff_reg_form.first_name}}
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="surname">surname</label>
+                    {{staff_reg_form.surname}}
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="last_name">last name</label>
+                    {{staff_reg_form.last_name}}
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-1 form-group" >
+                    <label for="admin_status">admin status</label>
+                    {{staff_reg_form.admin_status}}
+                </div>
+                  <div class="col-lg-5 col-md-5 form-group">
+                    &nbsp;
+                </div>
+                  <div class="col-lg-6 col-md-6 form-group">
+                    <label for="office">office</label>
+                    {{staff_reg_form.office}}
+                </div>
+              </div>
+
+            <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Add staff</button>
+            </div>
+</form>
+
+{%endblock%}
+
+

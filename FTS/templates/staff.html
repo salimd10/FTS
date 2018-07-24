@@ -1,5 +1,7 @@
 {%extends "staff_base.html"%}
 {%block title%}staff{%endblock%}
+{%block s2css%}{{receiver_form.media.css}}{%endblock%}
+{%block s2cjs%}{{receiver_form.media.js}}{%endblock%}
 {%block pblock%}
 <div>{{msg}}</div>
  <div class="templatemo-content-widget no-padding">
@@ -8,9 +10,10 @@
               <table class="table table-striped table-bordered templatemo-user-table">
                 <thead>
                   <tr>
-                    <td><input type="checkbox" class="form-control" id="select_all"/></td>
+                    <!--<td><input type="checkbox" class="form-control" id="select_all"/></td>-->
                     <td><a href="" class="white-text templatemo-sort-by"> Name <span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">ID <span class="caret"></span></a></td>
+                     <td><a href="" class="white-text templatemo-sort-by">sender <span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">Action <span class="caret"></span></a></td>
                   </tr>
                 </thead>
@@ -18,7 +21,7 @@
                 {%for file in incoming_files%}
 
                   <tr>
-                    <td></td>
+                    <!--<td></td>-->
                     {%for data in file%}
 				        <td>{{data}}</td>
 				    {%endfor%}
@@ -59,7 +62,7 @@
                   <tr>
                    <form method="post" action="/send/{{staff_id}}">
                        {%csrf_token%}
-                    <td><input type="hidden" value="{{file.1}}" name="file_id"/>{{file.1}}</td>
+                    <td><input type="hidden" value="{{file.1}}" name="file"/>{{file.1}}</td>
                     {%for data in file%}
 				        <td>{{data}}</td>
 
@@ -67,14 +70,15 @@
 
 
                       <td>
-                        <select name="receiver" id="office"  class="form-control">
+                          {{receiver_form.receiver}}
+                       <!-- <select name="receiver" id="office"  class="form-control">
                             {%for user in user_list%}
 
 
                                   <option value={{user.0}}>{{user.1}}</option>
 
                             {%endfor%}
-                        </select>
+                        </select>-->
                       </td>
 
                       <td>

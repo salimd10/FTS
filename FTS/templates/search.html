@@ -1,8 +1,14 @@
 {%extends "admin_base.html"%}
-{%block col1%}col-1{%endblock%}
-{%block col2%}col-4{%endblock%}
+
+{%block title%}admin{%endblock%}
+{%block s2css%}{{staff_reg_form.media.css}}{%endblock%}
+{%block s2cjs%}{{staff_reg_form.media.js}}{%endblock%}
+{%block navbar%}
+{%include "nav.html"%}
+{%endblock%}
+
 {%block search%}
-<form method="get" action="/search" class="templatemo-search-form" role="search">
+<form method="GET" action="/search" class="templatemo-search-form" role="search">
     {%csrf_token%}
           <div class="input-group">
               <button type="submit" class="fa fa-search"></button>
@@ -11,7 +17,7 @@
           </div>
 </form>
 {%endblock%}
-{%block pblock%}
+{%block edits%}
 <div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
 
@@ -24,6 +30,7 @@
                     <td><a href="" class="white-text templatemo-sort-by">Sender<span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">Receiver <span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">status<span class="caret"></span></a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">Date<span class="caret"></span></a></td>
                   </tr>
                 </thead>
                 <tbody>
@@ -46,10 +53,36 @@
                           <td>
                             {{log.status}}
                           </td>
+                          <td>
+                            {{log.date}}
+                          </td>
+
                       </tr>
                     {%endfor%}
                 </tbody>
               </table>
+
+                {% if results.has_other_pages %}
+  <ul class="pagination">
+    {% if results.has_previous %}
+      <li><a href="?page={{ results.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search}}{%endif%}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in results.paginator.page_range %}
+      {% if results.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}{% if request.GET.search %}&search={{ request.GET.search}}{%endif%}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if results.has_next %}
+      <li><a href="?page={{ results.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search}}{%endif%}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
 
             </div>
  </div>

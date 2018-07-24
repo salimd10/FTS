@@ -1,15 +1,26 @@
-<html>
-<body>
 
 {%extends "admin_base.html"%}
 
-
-{%block pblock%}
+{%block title%}admin{%endblock%}
+{%block s2css%}{{rmvform.media.css}}{%endblock%}
+{%block s2cjs%}{{rmvform.media.js}}{%endblock%}
+{%block navbar%}
+{%include "nav.html"%}
+{%endblock%}
+{%block edits%}
 
 {{error}}
 <form action='' method="POST" role="form" class="contactform">
     {%csrf_token%}
-{{form}}
-    <div class="text-center"><input type="submit" value="Revoke"></div>
+    <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="staff">staff</label>
+                    {{rmvform.user}}
+                </div>
+
+              </div>
+     <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Revoke</button>
+     </div>
 </form>
 {%endblock%}

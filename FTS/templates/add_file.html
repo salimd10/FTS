@@ -1,13 +1,31 @@
 
 {%extends "admin_base.html"%}
 
+{%block title%}admin{%endblock%}
+{%block s2css%}{{fileform.media.css}}{%endblock%}
+{%block s2cjs%}{{fileform.media.js}}{%endblock%}
+{%block navbar%}
+{%include "nav.html"%}
+{%endblock%}
 
-{%block pblock%}
+{%block edits%}
 
 {{error}}
-<form action='' method="POST" role="form" class="contactform">
+<form action='' class="templatemo-login-form" method="post" >
     {%csrf_token%}
-{{form}}
-    <div class="text-center"><input type="submit" value="add"></div>
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="file_id">file id</label>
+                    {{fileform.file_id}}
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="file_name">file name</label>
+                    {{fileform.file_name}}
+                </div>
+              </div>
+    <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Add File</button>
+            </div>
 </form>
+
 {%endblock%}

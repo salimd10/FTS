@@ -22,6 +22,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <!--{{ uform.media.css }}-->
+      {%block s2css%}{%endblock%}
 
   </head>
   <body>
@@ -41,17 +43,10 @@
         <div class="mobile-menu-icon">
             <i class="fa fa-bars"></i>
         </div>
-        <nav class="templatemo-left-nav">
-          <ul>
-            <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-            <li><a href="/logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
-            <li><a href="/add_staff"><i class="fa fa-eject fa-fw"></i>Add staff</a></li>
-            <li><a href="/add_file"><i class="fa fa-eject fa-fw"></i>Add file</a></li>
-            <li><a href=#><i class="fa fa-eject fa-fw"></i>Remove staff</a></li>
-            <li><a href="/manage_logins"><i class="fa fa-eject fa-fw"></i>Manage Logins</a></li>
-          </ul>
-        </nav>
+        {%block navbar%}{%endblock%}
+
       </div>
+
       <!-- Main content -->
       <div class="templatemo-content col-1 light-gray-bg">
         <div class="templatemo-top-nav-container">
@@ -65,35 +60,28 @@
             </nav>
           </div>
         </div>
-        <div class="templatemo-content-container">
-          <div class="templatemo-flex-row flex-content-row">
-            <div class="templatemo-content-widget white-bg {%block col1%}{%endblock%}"><!--col-2">-->
-              <!--<i class="fa fa-times"></i>-->
-              <!--<div class="square"></div>-->
-                    {%block pblock%}{%endblock%}
-            </div>
-            <div class="templatemo-content-widget white-bg {%block col2%}{%endblock%}"><!--col-2">-->
-             <!-- <i class="fa fa-times"></i>-->
-              <!--<div class="square"></div>-->
-               {%block ablock%}{%endblock%}
-            </div>
-
-          </div>
+          <div class="templatemo-content-container">
+              {%block content%}{%endblock%}
+               <div class="templatemo-content-widget white-bg">
+                   {%block edits%}{%endblock%}
+               </div>
            <!-- Second row ends -->
           <footer class="text-right">
             <p>Copyright &copy; 2018 NeoAltus
             | Designed by <a href="" target="_parent">NeoAltus</a></p>
           </footer>
-        </div>
+</div>
       </div>
     </div>
 
     <!-- JS -->
+    <script src="/static/FTS3/js/jquery-2.2.4.min.js"></script>      <!-- jQuery -->
     <script src="/static/FTS3/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
     <script src="/static/FTS3/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
     <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 
-    <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+    <script type="text/javascript" src="/static/FTS3/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+{%block s2cjs%}{%endblock%}
 
   </body>
 </html>

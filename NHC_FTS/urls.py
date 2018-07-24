@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from FTS.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,5 +36,6 @@ urlpatterns = [
     re_path(r'^logout/$', logout),
     path('manage_logins/', manage_logins),
     path('search/', search),
+    url(r'^select2/', include('django_select2.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

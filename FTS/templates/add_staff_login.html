@@ -1,14 +1,39 @@
 
-
 {%extends "admin_base.html"%}
-
-
-{%block pblock%}
+{%block title%}permissions{%endblock%}
+{%block s2css%}{{add_login_form.media.css}}{%endblock%}
+{%block s2cjs%}{{add_login_form.media.js}}{%endblock%}
+{%block navbar%}
+{%include "nav.html"%}
+{%endblock%}
+{%block edits%}
 
 {{error}}
 <form action='' method="POST" role="form" class="contactform">
     {%csrf_token%}
-{{form}}
-    <div class="text-center"><input type="submit" value="add"></div>
+             <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="">username</label>
+                    {{add_login_form.username}}
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="">password</label>
+                    {{add_login_form.password1}}
+                </div>
+             </div>
+              <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label for="">confirm password</label>
+                    {{add_login_form.password2}}
+                </div>
+                  <div class="col-lg-6 col-md-6 form-group">
+                    <label for="">staff</label><br/>
+                    {{add_login_form.staff}}
+                </div>
+              </div>
+
+                 <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Add Right</button>
+            </div>
 </form>
 {%endblock%}

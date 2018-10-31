@@ -6,9 +6,9 @@
 <div class="col-lg-5 col-md-8">
 
             <div class="form">
-
-              <div class="alert alert-warning"> {{errors}}</div>
-
+                {%if errors%}
+                    <div class="alert alert-warning"> {{errors}}</div>
+                {%endif%}
               <form action='' method="POST" role="form" class="contactform">
                   {%csrf_token%}
                   <div class="form-group">

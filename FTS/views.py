@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from FTS.forms import *
 from FTS.models import *
+from django.db import IntegrityError
 from FTS.functions import *
 import datetime
 from django.core.exceptions import ObjectDoesNotExist
@@ -12,8 +13,53 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 import string
 # Create your views here.
+def locate(request):
+    locate_form = LocateForm()
+    if request.method == "GET":
+        form = LocateForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['locate']
+            qset = (
+                    Q(name__icontains=query) |
+                    Q(file_id__icontains=query)
+            )
+            results = FilesLogs.objects.filter(qset).order_by('-date')[:1]
+            if results[0].sender=="" and results[0].status=="accepted":
+                template = "locate_accept.html"
+                receiver = Staff.objects.get(id=int(results[0].receiver))
+                receiver_name = receiver.first_name+" "+receiver.surname
+                file_name = results[0].name
+                file_id = results[0].file_id
+                file_status=results[0].status
+                accept_date = results[0].date
+                context = {'locate_form': locate_form, 'file_id': file_id, 'file_name': file_name, 'file_status': file_status,
+                           'receiver_name': receiver_name, 'accept_date':accept_date,
+                           'staff_id':str(request.session['staff_id'])}
+                return render(request,template,context)
+            else:
+                template = "locate_sent.html"
+                receiver = Staff.objects.get(id=int(results[0].receiver))
+                sender = Staff.objects.get(id=int(results[0].sender))
+                receiver_name = receiver.first_name + " " + receiver.surname
+                sender_name = sender.first_name + " " + sender.surname
+                file_name = results[0].name
+                file_id = results[0].file_id
+                file_status = results[0].status
+                sent_date = results[0].date
+                context = {'file_id': file_id, 'file_name': file_name, 'file_status': file_status,
+                           'receiver_name':receiver_name,'sender_name':sender_name, 'sent_date': sent_date,
+                           'staff_id':str(request.session['staff_id'])}
+                return render(request, template, context)
+    else:
+        locate_form = LocateForm()
+        template='locate_accept.html'
+        context ={'locate_form':locate_form,'staff_id':str(request.session['staff_id'])}
+        return render(request,template,context)
+
+
 
 def search(request):
+    
     template = "search.html"
     search_form = SearchForm()
     if request.method == "GET":
@@ -63,7 +109,7 @@ def search(request):
             context = {"error":error, 'form':form,'staff_id':str(request.session['staff_id'])}
             return render(request, template, context)
     else:
-        print("loser!loser!loser!loser!loser!loser!loser!loser!loser!loser!")
+
         form = SearchForm()
         return render(request, template, {"search_form": form, 'form': form,'staff_id':str(request.session['staff_id'])})
 
@@ -86,9 +132,13 @@ def home(request):
                         if staff.admin_status:
                             url = '/admin_staff/' + str(staff.id)
                             return HttpResponseRedirect(url)
+                        elif staff.management_status:
+                            url = '/management_staff/' + str(staff.id)
+                            return HttpResponseRedirect(url)
                         else:
                             url = '/staff/' + str(staff.id)
                             return HttpResponseRedirect(url)
+
                     else:
                         errormsg = "Your credentials are incorrect." \
                                  "please try again"
@@ -137,11 +187,11 @@ def staff(request, staff_id):
                 incoming_files.append([file.name, file.file_id, sender.first_name+' '+sender.surname])
             for file in outfiles:
                 outgoing_files.append([file.name, file.file_id])
-            context = {"staff": [user.first_name, user.surname], "incoming_files": incoming_files, "outgoing_files": outgoing_files,
+            context = {"staff": user.first_name+' '+user.surname, "incoming_files": incoming_files, "outgoing_files": outgoing_files,
                        "user_list": user_list,"staff_id": staff_id, 'file_id': file.file_id, 'receiver_form':reciver_list_form}  #name":files[0].name}
 
         else:
-            context = {'msg': 'You have no files to treat'}
+            context = {"staff": user.first_name+' '+user.surname,'msg': 'You have no files to treat'}
 
         return render(request, template, context)
     else:
@@ -149,8 +199,44 @@ def staff(request, staff_id):
         return HttpResponseRedirect('/')
 
 
+def management_staff(request, staff_id):
+    template = "managment_staff.html"
+    search_form = SearchForm()
+    if 'staff_id' in request.session and request.session['staff_id'] == int(staff_id):
+        incoming_files = []
+        outgoing_files = []
+        user_list = []
+        users=Staff.objects.all()
+        user = Staff.objects.get(id=staff_id)
+        infiles = FileTracker.objects.filter(receiver=str(user.id), status='pending')
+        outfiles = FileTracker.objects.filter(sender=str(user.id), status='received')
+        for staff in users:
+            if staff.id == int(staff_id):
+                pass
+            else:
+                name = staff.first_name + ' ' + staff.surname
+                user_list.append([staff.id, name])
+        reciver_list_form = staff_user_form(mychoices=user_list, mywidget=Select2Widget)
+        if len(infiles) != 0 or len(outfiles) != 0:
+            for file in infiles:
+                sender = Staff.objects.get(id=int(file.sender))  #getting file senders name
+                incoming_files.append([file.name, file.file_id, sender.first_name+' '+sender.surname])
+            for file in outfiles:
+                outgoing_files.append([file.name, file.file_id])
+            context = {"staff": user.first_name+' '+user.surname, "search_form": search_form, "incoming_files": incoming_files, "outgoing_files": outgoing_files,
+                       "user_list": user_list,"staff_id": staff_id, 'file_id': file.file_id, 'receiver_form':reciver_list_form}  #name":files[0].name}
+
+        else:
+            context = {'msg': 'You have no files to treat', "search_form": search_form, "staff": user.first_name+' '+user.surname}
+
+        return render(request, template, context)
+    else:
+
+        return HttpResponseRedirect('/')
+
 def admin_staff(request, staff_id):
     template = "admin.html"
+    locate_form=LocateForm()
     search_form=SearchForm()
     user_form=admin_user_form()
     if 'staff_id' in request.session and request.session['staff_id'] == int(staff_id):
@@ -191,12 +277,15 @@ def admin_staff(request, staff_id):
                 sender = Staff.objects.get(id=int(file.sender))
                 incoming_files.append([file.name, file.file_id,sender.first_name+' '+sender.surname])
 
-            context = {"staff": [user.first_name, user.surname], "incoming_files": incoming_files,
+            context = {"staff": user.first_name+' '+user.surname, "incoming_files": incoming_files,
 
-                       "user_list": user_list, "staff_id": staff_id, 'file_list': file_list, "search_form": search_form,"file_form": file_form}
+                       "user_list": user_list, "staff_id": staff_id, 'file_list': file_list, "search_form": search_form,
+                       "file_form": file_form,'locate_form':locate_form}
 
         else:
-            context = {"user_list": user_list, 'file_list': file_list,"staff_id": staff_id, "search_form": search_form,"file_form": file_form,"user_form": user_form}
+            context = {"staff": user.first_name+' '+user.surname,"user_list": user_list, 'file_list': file_list,
+                       "staff_id": staff_id, "search_form": search_form,"file_form": file_form,"user_form": user_form,
+                       'locate_form':locate_form}
         return render(request, template, context)
     else:
 
@@ -205,7 +294,7 @@ def admin_staff(request, staff_id):
 
 def accept(request, staff_id):
     if request.method == "GET":
-        file_id = request.GET.get('file_id',False)
+        file_id = request.GET.get('file_id', False)
         staff = Staff.objects.get(id=staff_id)
         if staff.admin_status:
             template = "admin_accept.html"
@@ -213,14 +302,32 @@ def accept(request, staff_id):
             template = "accept.html"
         now = datetime.datetime.now()
         #staff = Staff.objects.get(id=staff_id)
-        file = FileTracker.objects.get(receiver=str(staff_id),file_id=file_id)
-        FileTracker.objects.filter(receiver=str(staff_id)).update(receiver='', status='received', sender=staff_id)
+        file = FileTracker.objects.get(receiver=str(staff_id),file_id=file_id)   #get file reciver id
+        FileTracker.objects.filter(receiver=str(staff_id)).update(receiver='', status='received', sender=staff_id)  #update status to recived
         log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender='', receiver=staff_id, status='accepted')
         log.save()
         context = {'mssg':"File has been accepted, kindly work on it within the next 24hrs", 'staff_id': staff_id}
 
         return render(request, template, context)
-
+    elif request.method == "POST":
+        file_id = request.POST['file_id']
+        staff = Staff.objects.get(id=staff_id)
+        if staff.admin_status:
+            template = "admin_accept.html"
+        else:
+            template = "accept.html"
+        now = datetime.datetime.now()
+        # staff = Staff.objects.get(id=staff_id)
+        file = FileTracker.objects.get(receiver=str(staff_id), file_id=file_id)  # get file reciver id
+        FileTracker.objects.filter(receiver=str(staff_id), file_id=file_id).update(receiver='', status='received',
+                                                                  sender=staff_id)  # update status to recived
+        log = FilesLogs.objects.create(file_id=file.file_id, name=file.name, sender='', receiver=staff_id,
+                                       status='accepted')
+        log.save()
+        context = {'mssg': "File has been accepted, kindly work on it within the next 24hrs", 'staff_id': staff_id}
+        return render(request, template, context)
+    else:
+        pass
 
 def send(request, staff_id):
     staff = Staff.objects.get(id=staff_id)
@@ -277,18 +384,29 @@ def add_staff(request):
             last_name = staff_reg_form.cleaned_data['last_name']
             office = staff_reg_form.cleaned_data['office']
             admin_status = staff_reg_form.cleaned_data['admin_status']
+            management_status = staff_reg_form.cleaned_data['management_status']
+            try:
+                staff = Staff(staff_id=staff_id, first_name=first_name, surname=surname, last_name=last_name,
+                          admin_status=admin_status, management_status=management_status, office=office)
+                staff.save()
+                staff_reg_form = StaffRegForm()
+                msg = 'Staff has been created successfuly'
+                context = {'msg': msg, 'staff_reg_form': staff_reg_form}
+                return render(request, template, context)
+                #return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id'])) #redirects back to staff page
+            except IntegrityError:
+                staff_reg_form = StaffRegForm()
+                e = "The user already Exist "
+                context = {'staff_reg_form': staff_reg_form, 'uniqueness_error': e}
+                return render(request, template, context)
 
-            staff = Staff(staff_id=staff_id,first_name=first_name,surname=surname,last_name=last_name,
-                          admin_status=admin_status,office=office)
-            staff.save()
-            return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
         else:
-            error=staff_reg_form.errors
-            context = {'staff_reg_form': staff_reg_form,'error':error, 'staff_id':str(request.session['staff_id'])}
+            error = staff_reg_form.errors
+            context = {'staff_reg_form': staff_reg_form, 'error':error}#'staff_id':str(request.session['staff_id'])}
             return render(request, template, context)
     else:
         staff_reg_form = StaffRegForm()
-        context={"staff_reg_form":staff_reg_form,'staff_id':str(request.session['staff_id'])}
+        context={"staff_reg_form":staff_reg_form,'staff_id':str(request.session['staff_id'])}#'staff_id':str(request.session['staff_id'])}
         return render(request,template,context)
 def add_staff_login(request):
     template = "add_staff_login.html"
@@ -300,18 +418,29 @@ def add_staff_login(request):
             password2 = add_login_form.cleaned_data['password2']
             staff = add_login_form.cleaned_data['staff']
             if password1 == password2:
-                staff_login = StaffLogin(username=username, password=password1, staff=staff)
-                staff_login.save()
-                return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
+                try:
+                    staff_login = StaffLogin(username=username, password=password1, staff=staff)
+                    staff_login.save()
+                    add_login_form = LoginDetailsForm()
+                    msg = 'Staff login has been created successfuly'
+                    context = {'msg': msg, 'add_login_form': add_login_form, 'staff_id':str(request.session['staff_id'])}
+                    return render(request, template, context)
+                    #return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
+                except IntegrityError:
+                    e = "The login rights already exist "
+                    context = {'add_login_form': add_login_form, 'uniqueness_error': e,'staff_id':str(request.session['staff_id'])}
+                    return render(request, template, context)
             else:
-                return HttpResponseRedirect('/')
+                error = 'Passwords do not match'
+                context = {'error': error, 'add_login_form': add_login_form,'staff_id':str(request.session['staff_id'])}
+                return render(request, template, context)
         else:
             error = add_login_form.errors
-            context = {'add_login_form': add_login_form, 'error': error}
+            context = {'add_login_form': add_login_form, 'error': error, 'staff_id':str(request.session['staff_id'])}
             return render(request, template, context)
     else:
         add_login_form = LoginDetailsForm()
-        context = {"add_login_form": add_login_form,"staff_id":str(request.session['staff_id'])}
+        context = {"add_login_form": add_login_form,"staff_id": str(request.session['staff_id'])}
         return render(request, template, context)
 
 def rmv_staff_login(request):
@@ -320,12 +449,19 @@ def rmv_staff_login(request):
         rmvform = RmvLoginForm(request.POST)
         if rmvform.is_valid():
             user = rmvform.cleaned_data['user']
-            for u in user:
-                StaffLogin.objects.get(staff=u.id).delete()
-
+            try:
+                StaffLogin.objects.get(staff=user.id).delete()
+                rmvform = RmvLoginForm()
+                msg = 'Staff login has been revoked successfuly'
+                context = {'msg': msg, 'rmvform': rmvform,'staff_id':str(request.session['staff_id'])}
+                return render(request, template, context)
+            except ObjectDoesNotExist:
+                 e = "The login rights have been revoked  already "
+                 context = {'rmvform': rmvform, 'uniqueness_error': e,'staff_id':str(request.session['staff_id'])}
+                 return render(request, template, context)
             #staff_login = StaffLogin(username=username, password=password, staff=staff)
             #staff_login.save()
-            return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
+            #return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
         else:
             error = rmvform.errors
             context = {'rmvform': rmvform, 'error': error,'staff_id':str(request.session['staff_id'])}
@@ -342,12 +478,23 @@ def add_file(request):
         if fileform.is_valid():
             file_id = fileform.cleaned_data['file_id']
             file_name = fileform.cleaned_data['file_name']
-            file=File(file_id=file_id, name=file_name)
-            file.save()
-            return HttpResponseRedirect('/admin_staff/'+str(request.session['staff_id']))
+            try:                                                #checking for uniquenss of file created
+                file = File(file_id=file_id, name=file_name)
+                file.save()
+                fileform = AddFileForm()
+                msg= "file has been created successfully"
+                context = {'fileform': fileform, 'msg': msg,'staff_id':str(request.session['staff_id'])}
+                return render(request, template, context)
+                #return HttpResponseRedirect('/admin_staff/' + str(request.session['staff_id']))
+            except IntegrityError:
+                fileform = AddFileForm()
+                e = "The file already exist "
+                context = {'fileform': fileform, 'uniqueness_error': e, 'staff_id':str(request.session['staff_id'])}
+                return render(request, template, context)
+
         else:
             error = fileform.errors
-            context={'errors':error}
+            context={'error': error, 'fileform': fileform,'staff_id':str(request.session['staff_id'])}
             return render(request,template,context)
     else:
         fileform=AddFileForm()

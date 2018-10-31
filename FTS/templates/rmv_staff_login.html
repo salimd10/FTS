@@ -9,7 +9,22 @@
 {%endblock%}
 {%block edits%}
 
-{{error}}
+{%if error%}
+    <div class="alert alert-danger">
+        <strong>Error!</strong> {{error}}
+    </div>
+{%endif%}
+{%if uniqueness_error%}
+    <div class="alert alert-danger">
+        <strong>Error!</strong> {{uniqueness_error}}
+    </div>
+{%endif%}
+
+{%if msg%}
+    <div class="alert alert-success">
+        <strong><h2>{{msg}}</h2></strong>
+    </div>
+{%endif%}
 <form action='' method="POST" role="form" class="contactform">
     {%csrf_token%}
     <div class="row form-group">

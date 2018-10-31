@@ -102,10 +102,11 @@ footer { padding: 15px; }
 	font-size: 1.8em;
 	font-weight: 300;
 	letter-spacing: 1.5px;
-	margin: 0 5px;	
+	margin: 0 5px;
 	text-transform: uppercase;
 	vertical-align: middle;
 }
+
 .profile-photo-container { position: relative; }
 .profile-photo-overlay {
 	background-color: rgba(4, 152, 114, 0.35);

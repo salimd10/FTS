@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 
 # Create your models here.
 class Department(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50,unique=True)
     description = models.TextField(blank=True, null=True)
 
     objects = models.Manager()
@@ -14,7 +14,7 @@ class Department(models.Model):
 
 
 class Office(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     description = models.TextField(blank=True, null=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
@@ -25,7 +25,7 @@ class Office(models.Model):
 
 
 class File(models.Model):
-    file_id = models.CharField(max_length=200)
+    file_id = models.CharField(max_length=200, unique=True)
     name = models.CharField(max_length=400)
 
     # status = models.CharField(max_length=30,default='')
@@ -74,6 +74,7 @@ class Staff(models.Model):
     surname = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     admin_status = models.BooleanField(default=False)
+    management_status = models.BooleanField(default=False)
     office = models.ForeignKey(Office, on_delete=models.CASCADE)
 
     # phone = models.CharField(max_length=11)
@@ -86,9 +87,9 @@ class Staff(models.Model):
 
 
 class StaffLogin(models.Model):
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=20, default="password")
-    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE, unique=True)
 
     objects = models.Manager()
 

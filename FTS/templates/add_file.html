@@ -9,8 +9,23 @@
 {%endblock%}
 
 {%block edits%}
+{%if msg%}
+    <div class="alert alert-success">
+        <strong><h2>{{msg}}</h2></strong>
+    </div>
+{%endif%}
 
-{{error}}
+{%if error%}
+    <div class="alert alert-danger">
+        <strong>Error!</strong> {{error}}
+    </div>
+{%endif%}
+{%if uniqueness_error%}
+    <div class="alert alert-danger">
+        <strong>Error!</strong> <h2>{{uniqueness_error}}</h2>
+    </div>
+{%endif%}
+
 <form action='' class="templatemo-login-form" method="post" >
     {%csrf_token%}
               <div class="row form-group">

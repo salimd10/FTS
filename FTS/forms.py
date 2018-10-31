@@ -47,6 +47,7 @@ class StaffRegForm(forms.Form):
     surname = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20, empty_value='',required=False)
     admin_status = forms.BooleanField(initial=False,required=False)
+    management_status = forms.BooleanField(initial=False, required=False)
     office = forms.ModelChoiceField(queryset=Office.objects.all(), initial='', widget=Select2Widget)
 
     staff_id.widget.attrs.update({'class': "form-control",
@@ -69,6 +70,9 @@ class StaffRegForm(forms.Form):
     admin_status.widget.attrs.update({'class': "form-control",
 
                                      })
+    management_status.widget.attrs.update({'class': "form-control",
+
+                                      })
 
     office.widget.attrs.update({'class': "form-control",
                                 'id': "office",
@@ -138,6 +142,14 @@ class SearchForm(forms.Form):
 
     search.widget.attrs.update({'class': "form-control",
                                   'placeholder': "search",
+                                  'name': "q",
+                                  'id': "srch-term"})
+
+class LocateForm(forms.Form):
+    locate = forms.CharField(max_length=255)
+
+    locate.widget.attrs.update({'class': "form-control",
+                                  'placeholder': "locate",
                                   'name': "q",
                                   'id': "srch-term"})
 

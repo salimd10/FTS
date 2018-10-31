@@ -30,12 +30,14 @@ urlpatterns = [
     path('add_staff_login/', add_staff_login),
     path('rmv_staff_login/', rmv_staff_login),
     re_path(r'^staff/(\d{1,4})/$', staff),
+    re_path(r'^management_staff/(\d{1,4})/$', management_staff),
     re_path(r'^admin_staff/(\d{1,4})/$', admin_staff),
     re_path(r'^accept/(\d{1,4})', accept),
     re_path(r'^send/(\d{1,4})', send),
     re_path(r'^logout/$', logout),
     path('manage_logins/', manage_logins),
     path('search/', search),
+    path('locate/', locate),
     url(r'^select2/', include('django_select2.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

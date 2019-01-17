@@ -13,10 +13,16 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 import string
 # Create your views here.
+
+def locate_file(request):
+    return render(request,"locate.html", {})
+
+
 def locate(request):
     locate_form = LocateForm()
-    if request.method == "GET":
-        form = LocateForm(request.GET)
+
+    if request.method == "POST":
+        form = LocateForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['locate']
             qset = (
@@ -24,38 +30,56 @@ def locate(request):
                     Q(file_id__icontains=query)
             )
             results = FilesLogs.objects.filter(qset).order_by('-date')[:1]
-            if results[0].sender=="" and results[0].status=="accepted":
-                template = "locate_accept.html"
-                receiver = Staff.objects.get(id=int(results[0].receiver))
-                receiver_name = receiver.first_name+" "+receiver.surname
-                file_name = results[0].name
-                file_id = results[0].file_id
-                file_status=results[0].status
-                accept_date = results[0].date
-                context = {'locate_form': locate_form, 'file_id': file_id, 'file_name': file_name, 'file_status': file_status,
-                           'receiver_name': receiver_name, 'accept_date':accept_date,
-                           'staff_id':str(request.session['staff_id'])}
-                return render(request,template,context)
-            else:
+            try:
+                if results[0].sender == "" and results[0].status == "accepted":
+                    template = "locate_accept.html"
+                    receiver = Staff.objects.get(id=int(results[0].receiver))
+                    receiver_name = receiver.first_name+" "+receiver.surname
+                    file_name = results[0].name
+                    file_id = results[0].file_id
+                    file_status = results[0].status
+                    accept_date = results[0].date
+                    context = {'locate_form': locate_form,
+                               'file_id': file_id,
+                               'file_name': file_name,
+                               'file_status': file_status,
+                               'receiver_name': receiver_name,
+                               'accept_date': accept_date,
+                               'staff_id': str(request.session['staff_id'])}
+                    return render(request, template, context)
+                else:
+                    template = "locate_sent.html"
+                    receiver = Staff.objects.get(id=int(results[0].receiver))
+                    sender = Staff.objects.get(id=int(results[0].sender))
+                    receiver_name = receiver.first_name + " " + receiver.surname
+                    sender_name = sender.first_name + " " + sender.surname
+                    file_name = results[0].name
+                    file_id = results[0].file_id
+                    file_status = results[0].status
+                    sent_date = results[0].date
+                    context = {
+                               'locate_form': locate_form,
+                               'file_id': file_id,
+                               'file_name': file_name,
+                               'file_status': file_status,
+                               'receiver_name': receiver_name,
+                               'sender_name': sender_name,
+                               'sent_date': sent_date,
+                               'staff_id': str(request.session['staff_id'])}
+                    return render(request, template, context)
+            except IndexError:
                 template = "locate_sent.html"
-                receiver = Staff.objects.get(id=int(results[0].receiver))
-                sender = Staff.objects.get(id=int(results[0].sender))
-                receiver_name = receiver.first_name + " " + receiver.surname
-                sender_name = sender.first_name + " " + sender.surname
-                file_name = results[0].name
-                file_id = results[0].file_id
-                file_status = results[0].status
-                sent_date = results[0].date
-                context = {'file_id': file_id, 'file_name': file_name, 'file_status': file_status,
-                           'receiver_name':receiver_name,'sender_name':sender_name, 'sent_date': sent_date,
-                           'staff_id':str(request.session['staff_id'])}
+                error = "file can not be found"
+                context = {'locate_form': locate_form,
+                           'index_error': error,
+                           'staff_id': str(request.session['staff_id'])}
                 return render(request, template, context)
-    else:
-        locate_form = LocateForm()
-        template='locate_accept.html'
-        context ={'locate_form':locate_form,'staff_id':str(request.session['staff_id'])}
-        return render(request,template,context)
 
+    else:
+        template = "locate.html"
+        context = {'locate_form': locate_form,
+                   'staff_id': str(request.session['staff_id'])}
+        return render(request, template, context)
 
 
 def search(request):

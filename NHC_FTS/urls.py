@@ -38,6 +38,7 @@ urlpatterns = [
     path('manage_logins/', manage_logins),
     path('search/', search),
     path('locate/', locate),
+    path('locate_file/', locate_file),
     url(r'^select2/', include('django_select2.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

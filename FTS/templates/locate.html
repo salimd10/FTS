@@ -16,13 +16,9 @@
               <!--<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">-->
           </div>
 </form>
+
 {%endblock%}
 {%block edits%}
-{%if index_error%}
-    <div class="alert alert-danger">
-        <strong>Error!</strong> <h2>{{index_error}}</h2>
-    </div>
-{%endif%}
 <div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
 
@@ -33,8 +29,7 @@
                     <td><a href="" class="white-text templatemo-sort-by">File ID  <span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">File Name <span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">File Status <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Sender<span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Reciver<span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Accepted by<span class="caret"></span></a></td>
                     <td><a href="" class="white-text templatemo-sort-by">Date<span class="caret"></span></a></td>
                   </tr>
                 </thead>
@@ -52,12 +47,8 @@
                             {{file_status}}
                           </td>
                           <td>
-                            {{sender_name}}
-                          </td>
-                         <td>
                             {{receiver_name}}
                           </td>
-
                           <td>
                             {{accept_date}}
                           </td>
@@ -66,16 +57,5 @@
                 </tbody>
               </table>
             </div>
-    <div style="margin-top:50px;">
-        <form method="POST" action="" class="form-inline" role="search">
-            {%csrf_token%}
-                <div class="form-group">
-                    {{locate_form.locate}}
-                           <!--<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">-->
-                </div>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                <button type="submit" class="btn btn-primary btn-md"> search</button>
-        </form>
-    </div>
  </div>
 {%endblock%}

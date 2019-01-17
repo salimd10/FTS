@@ -8,7 +8,7 @@
 {%endblock%}
 
 {%block search%}
-<form method="GET" action="/locate" class="templatemo-search-form" role="search">
+<form method="POST" action="" class="templatemo-search-form" role="search">
     {%csrf_token%}
           <div class="input-group">
               <button type="submit" class="fa fa-search"></button>
@@ -16,6 +16,7 @@
               <!--<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">-->
           </div>
 </form>
+
 {%endblock%}
 {%block edits%}
 <div class="templatemo-content-widget no-padding">
@@ -56,5 +57,16 @@
                 </tbody>
               </table>
             </div>
+    <div style="margin-top:50px;">
+        <form method="POST" action="" class="form-inline" role="search">
+            {%csrf_token%}
+                <div class="form-group">
+                    {{locate_form.locate}}
+                           <!--<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">-->
+                </div>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                <button type="submit" class="btn btn-primary btn-md"> search</button>
+        </form>
+    </div>
  </div>
 {%endblock%}

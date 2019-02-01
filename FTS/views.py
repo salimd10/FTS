@@ -83,9 +83,14 @@ def locate(request):
 
 
 def search(request):
-    
-    template = "search.html"
+
     search_form = SearchForm()
+    staff_id = request.session['staff_id']
+    staff = Staff.objects.get(id=staff_id)
+    if staff.admin_status:
+        template = "search.html"
+    else:
+        template = "mgt_search.html"
     if request.method == "GET":
         form = SearchForm(request.GET)
         if form.is_valid():
